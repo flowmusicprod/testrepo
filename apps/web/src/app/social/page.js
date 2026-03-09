@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { Reveal } from "@/components/reveal";
+import { socialLinks } from "@/lib/data";
 
-const instagramEmbed = "https://www.instagram.com/p/C5k3YXORr4L/embed";
-const tiktokEmbed = "https://www.tiktok.com/embed/7361436022231258410";
+const instagramEmbed = "https://www.instagram.com/dejeri/embed";
+const tiktokEmbed = "https://www.tiktok.com/@dejeri";
 
 export default function SocialPage() {
   return (
@@ -20,14 +22,23 @@ export default function SocialPage() {
           <article className="panel" style={{ gridColumn: "span 2" }}>
             <h3>Instagram</h3>
             <iframe title="DE'JERI Instagram" className="social-embed" src={instagramEmbed} />
+            <div style={{ marginTop: "0.8rem" }}>
+              <Link className="btn" href={socialLinks.instagram} target="_blank">
+                Open Instagram
+              </Link>
+            </div>
           </article>
           <article className="panel" style={{ gridColumn: "span 1" }}>
             <h3>TikTok</h3>
             <iframe title="DE'JERI TikTok" className="social-embed" src={tiktokEmbed} />
+            <div style={{ marginTop: "0.8rem" }}>
+              <Link className="btn" href={socialLinks.tiktok} target="_blank">
+                Open TikTok
+              </Link>
+            </div>
           </article>
         </div>
       </section>
     </div>
   );
 }
-

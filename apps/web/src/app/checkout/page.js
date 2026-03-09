@@ -28,6 +28,9 @@ export default async function CheckoutPage({ searchParams }) {
         <p className="eyebrow">Checkout</p>
         <h1>Stripe publishable key is missing.</h1>
         <p>Set NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY in .env.local to enable checkout.</p>
+        <Link href="/catalog" className="btn">
+          Return to Catalog
+        </Link>
       </div>
     );
   }
@@ -48,4 +51,3 @@ export default async function CheckoutPage({ searchParams }) {
     </div>
   );
 }
-

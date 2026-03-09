@@ -101,6 +101,12 @@ export const brandContact = {
   address: "Atlanta, GA 30318, United States",
 };
 
+export const socialLinks = {
+  instagram: "https://www.instagram.com/dejeri/",
+  tiktok: "https://www.tiktok.com/@dejeri",
+  youtube: "https://www.youtube.com/@dejeri",
+};
+
 export function findProductBySku(sku) {
   return products.find((product) => product.sku === sku);
 }

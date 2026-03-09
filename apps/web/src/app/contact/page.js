@@ -1,7 +1,10 @@
 import { Reveal } from "@/components/reveal";
 import { brandContact } from "@/lib/data";
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }) {
+  const params = await searchParams;
+  const sent = params?.sent === "1";
+
   return (
     <div className="shell section">
       <Reveal>
@@ -29,6 +32,7 @@ export default function ContactPage() {
           <h2>Send a Message</h2>
         </Reveal>
         <article className="panel" style={{ marginTop: "0.8rem" }}>
+          {sent ? <p className="eyebrow">Message sent successfully.</p> : null}
           <form method="post" action="/api/contact">
             <input name="name" placeholder="Your name" required />
             <input type="email" name="email" placeholder="Email address" required />
@@ -43,4 +47,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

@@ -38,6 +38,16 @@ create table if not exists orders (
   status text not null,
   paid_at timestamptz
 );
+
+create table if not exists collaboration_applications (
+  id bigint generated always as identity primary key,
+  full_name text not null,
+  email text not null,
+  interest_type text not null,
+  portfolio_link text,
+  notes text not null,
+  submitted_at timestamptz not null default now()
+);
 ```
 
 ## Stripe Webhook
@@ -49,4 +59,3 @@ Listen for:
 
 - `payment_intent.succeeded`
 - `payment_intent.payment_failed`
-

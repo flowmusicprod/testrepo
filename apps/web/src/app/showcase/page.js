@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { releases } from "@/lib/data";
+import { releases, socialLinks } from "@/lib/data";
 
 const youtubeVideo = "https://www.youtube.com/embed/aqz-KE-bpKQ";
 
@@ -32,7 +33,7 @@ export default function ShowcasePage() {
       <section className="section">
         <Reveal>
           <h2>Video Showcase</h2>
-          <p>Embed the official DE&apos;JERI YouTube content here.</p>
+          <p>Watch the latest visual release moments and campaign cuts.</p>
         </Reveal>
         <div className="panel" style={{ padding: "0.6rem", marginTop: "0.8rem" }}>
           <iframe
@@ -42,9 +43,13 @@ export default function ShowcasePage() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
+          <div style={{ marginTop: "0.8rem" }}>
+            <Link className="btn" href={socialLinks.youtube} target="_blank">
+              Open YouTube Channel
+            </Link>
+          </div>
         </div>
       </section>
     </div>
   );
 }
-

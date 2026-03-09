@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { products } from "@/lib/data";
+import { products, brandContact } from "@/lib/data";
 
 export default function CatalogPage() {
   return (
@@ -23,9 +23,15 @@ export default function CatalogPage() {
                   {product.stock}
                 </span>
                 <div style={{ marginTop: "0.7rem" }}>
-                  <Link className="btn" href={`/checkout?sku=${product.sku}`}>
-                    {product.stock === "Out of Stock" ? "Notify Me" : "Buy Now"}
-                  </Link>
+                  {product.stock === "Out of Stock" ? (
+                    <a className="btn" href={`mailto:${brandContact.email}?subject=Restock%20Request%20${product.sku}`}>
+                      Notify Me
+                    </a>
+                  ) : (
+                    <Link className="btn" href={`/checkout?sku=${product.sku}`}>
+                      Buy Now
+                    </Link>
+                  )}
                 </div>
               </div>
             </article>

@@ -8,19 +8,21 @@ export default function HomePage() {
     <div className="shell">
       <section className="hero">
         <Reveal>
-          <p className="eyebrow">Luxury Street Atelier</p>
-          <h1>DE&apos;JERI moves like a statement before it speaks.</h1>
-          <p>
-            Editorial silhouettes, dynamic campaign storytelling, and a catalog built for drops that
-            live across social, video, and the street.
-          </p>
-          <div className="cta-row">
-            <Link className="btn primary" href="/catalog">
-              Shop Catalog
-            </Link>
-            <Link className="btn" href="/showcase">
-              Explore Releases
-            </Link>
+          <div className="hero-copy">
+            <p className="eyebrow">DE&apos;JERI Official Store</p>
+            <h1>Street Luxury Made to Wear Loudly.</h1>
+            <p>
+              Discover limited drops, signature eyewear, and campaign-led collections from
+              DE&apos;JERI.
+            </p>
+            <div className="cta-row">
+              <Link className="btn primary" href="/catalog">
+                Shop Now
+              </Link>
+              <Link className="btn" href="/showcase">
+                New Releases
+              </Link>
+            </div>
           </div>
         </Reveal>
         <Reveal delay={0.12}>
@@ -39,9 +41,9 @@ export default function HomePage() {
 
       <section className="section">
         <div className="section-title">
-          <h2>Live Release Thread</h2>
+          <h2>Featured Drops</h2>
           <Link className="btn" href="/showcase">
-            Open Showcase
+            View All Drops
           </Link>
         </div>
         <div className="grid cols-3">
@@ -62,9 +64,9 @@ export default function HomePage() {
 
       <section className="section">
         <div className="section-title">
-          <h2>Featured Catalog</h2>
+          <h2>Shop by Piece</h2>
           <Link className="btn" href="/catalog">
-            View All
+            Open Catalog
           </Link>
         </div>
         <div className="grid cols-3">
@@ -78,6 +80,11 @@ export default function HomePage() {
                   <span className={`status ${product.stock === "Out of Stock" ? "out" : ""}`}>
                     {product.stock}
                   </span>
+                  <div style={{ marginTop: "0.7rem" }}>
+                    <Link className="btn" href={`/checkout?sku=${product.sku}`}>
+                      {product.stock === "Out of Stock" ? "Notify Me" : "Buy Now"}
+                    </Link>
+                  </div>
                 </div>
               </article>
             </Reveal>
@@ -87,4 +94,3 @@ export default function HomePage() {
     </div>
   );
 }
-
