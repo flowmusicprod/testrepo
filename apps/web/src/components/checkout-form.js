@@ -6,11 +6,11 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 const cardStyle = {
   style: {
     base: {
-      color: "#f6f3ee",
+      color: "#1b1b1b",
       fontFamily: "Manrope, sans-serif",
       fontSize: "16px",
       "::placeholder": {
-        color: "#a7a7a7",
+        color: "#6b6b6b",
       },
     },
     invalid: {
@@ -112,4 +112,3 @@ export function CheckoutForm({ sku, productName, unitPrice }) {
     </form>
   );
 }
-

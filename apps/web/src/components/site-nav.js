@@ -10,15 +10,15 @@ export function SiteNav() {
 
   return (
     <header className="site-header">
-      <div className="top-banner">FREE SHIPPING AND RETURNS WORLDWIDE</div>
       <nav className="main-nav shell">
-        <div className="nav-side">
-          <Link href="/catalog">Shop</Link>
-          <Link href="/showcase">Releases</Link>
+        <div className="nav-side nav-left">
+          <Link href="/catalog">All Pieces</Link>
+          <Link href="/showcase">Drops</Link>
+          <Link href="/collaboration">Collabs</Link>
         </div>
         <Link href="/" className="brand-mark" aria-label="DE'JERI Home">
           <Image
-            src="/assets/brand/logos/Transparent/dejeri_white_trans.png"
+            src="/assets/brand/logos/Transparent/dejeri_black_trans.png"
             alt="DE'JERI"
             width={170}
             height={58}
@@ -36,10 +36,10 @@ export function SiteNav() {
             );
           })}
         </div>
-        <div className="nav-side nav-social">
-          <Link href="/social">IG</Link>
-          <Link href="/social">TT</Link>
-          <Link href="/showcase">YT</Link>
+        <div className="nav-side nav-right">
+          <Link href="/social">Instagram</Link>
+          <Link href="/social">TikTok</Link>
+          <Link href="/atelier/login">Admin</Link>
         </div>
       </nav>
     </header>

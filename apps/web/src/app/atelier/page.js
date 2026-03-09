@@ -19,40 +19,43 @@ export default async function AtelierDashboardPage() {
 
   if (adminSession !== "authorized") {
     return (
-      <div className="shell section">
-        <p className="eyebrow">Restricted</p>
-        <h1>Admin Access Required</h1>
-        <Link className="btn primary" href="/atelier/login">
-          Go to Login
-        </Link>
+      <div className="shell scene-shell">
+        <div className="scene-content section">
+          <p className="eyebrow">Restricted</p>
+          <h1>Admin Access Required</h1>
+          <Link className="btn primary" href="/atelier/login">
+            go to login
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="shell section">
-      <p className="eyebrow">DE&apos;JERI Admin</p>
-      <h1>Atelier Dashboard</h1>
-      <p>
-        This is the private workspace for managing catalog changes, campaign CTAs, social embeds,
-        checkout flow, and AI mockup outputs.
-      </p>
+    <div className="shell scene-shell">
+      <div className="scene-content section">
+        <p className="eyebrow">DE&apos;JERI Admin</p>
+        <h1>Atelier Dashboard</h1>
+        <p>
+          This is the private workspace for managing catalog changes, campaign CTAs, social embeds,
+          checkout flow, and AI mockup outputs.
+        </p>
 
-      <div className="grid cols-3" style={{ marginTop: "1.2rem" }}>
-        {cards().map((card) => (
-          <article className="panel" key={card.title}>
-            <h3>{card.title}</h3>
-            <p>{card.detail}</p>
-          </article>
-        ))}
+        <div className="grid cols-3" style={{ marginTop: "1.2rem" }}>
+          {cards().map((card) => (
+            <article className="panel" key={card.title}>
+              <h3>{card.title}</h3>
+              <p>{card.detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <form method="post" action="/api/admin/logout" style={{ marginTop: "1rem", maxWidth: "200px" }}>
+          <button type="submit" className="btn">
+            sign out
+          </button>
+        </form>
       </div>
-
-      <form method="post" action="/api/admin/logout" style={{ marginTop: "1rem", maxWidth: "200px" }}>
-        <button type="submit" className="btn">
-          Sign Out
-        </button>
-      </form>
     </div>
   );
 }
-

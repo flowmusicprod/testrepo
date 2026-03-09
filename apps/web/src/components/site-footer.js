@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer shell">
       <Image
-        src="/assets/brand/logos/Transparent/dejeri_white_trans.png"
+        src="/assets/brand/logos/Transparent/dejeri_black_trans.png"
         alt="DE'JERI"
         width={160}
         height={48}

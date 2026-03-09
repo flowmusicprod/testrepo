@@ -2,7 +2,6 @@ import { Cormorant_Garamond, Manrope, Space_Mono } from "next/font/google";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { SmoothScroll } from "@/components/smooth-scroll";
-import { ExperienceGate } from "@/components/experience-gate";
 import { PageTransition } from "@/components/page-transition";
 import "./globals.css";
 
@@ -33,7 +32,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}>
-        <ExperienceGate />
         <SmoothScroll />
         <SiteNav />
         <main>
