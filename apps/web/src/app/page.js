@@ -9,18 +9,18 @@ export default function HomePage() {
       <section className="hero">
         <Reveal>
           <div className="hero-copy">
-            <p className="eyebrow">DE&apos;JERI Official Store</p>
-            <h1>Street Luxury Made to Wear Loudly.</h1>
+            <p className="eyebrow">Experience DE&apos;JERI</p>
+            <h1 className="hero-title">Street Luxury Made to Feel Cinematic.</h1>
             <p>
-              Discover limited drops, signature eyewear, and campaign-led collections from
-              DE&apos;JERI.
+              An immersive fashion space inspired by motion-first digital storytelling, designed to
+              make every drop feel like an event.
             </p>
             <div className="cta-row">
               <Link className="btn primary" href="/catalog">
-                Shop Now
+                Enter Catalog
               </Link>
               <Link className="btn" href="/showcase">
-                New Releases
+                Watch Showcase
               </Link>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function HomePage() {
         <div className="section-title">
           <h2>Featured Drops</h2>
           <Link className="btn" href="/showcase">
-            View All Drops
+            Experience All
           </Link>
         </div>
         <div className="grid cols-3">
@@ -66,7 +66,7 @@ export default function HomePage() {
         <div className="section-title">
           <h2>Shop by Piece</h2>
           <Link className="btn" href="/catalog">
-            Open Catalog
+            Open Full Catalog
           </Link>
         </div>
         <div className="grid cols-3">

@@ -23,7 +23,7 @@ export default function SocialPage() {
             <h3>Instagram</h3>
             <iframe title="DE'JERI Instagram" className="social-embed" src={instagramEmbed} />
             <div style={{ marginTop: "0.8rem" }}>
-              <Link className="btn" href={socialLinks.instagram} target="_blank">
+              <Link className="btn" href={socialLinks.instagram} target="_blank" rel="noreferrer">
                 Open Instagram
               </Link>
             </div>
@@ -32,7 +32,7 @@ export default function SocialPage() {
             <h3>TikTok</h3>
             <iframe title="DE'JERI TikTok" className="social-embed" src={tiktokEmbed} />
             <div style={{ marginTop: "0.8rem" }}>
-              <Link className="btn" href={socialLinks.tiktok} target="_blank">
+              <Link className="btn" href={socialLinks.tiktok} target="_blank" rel="noreferrer">
                 Open TikTok
               </Link>
             </div>

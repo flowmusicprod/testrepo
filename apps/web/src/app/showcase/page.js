@@ -44,7 +44,7 @@ export default function ShowcasePage() {
             allowFullScreen
           />
           <div style={{ marginTop: "0.8rem" }}>
-            <Link className="btn" href={socialLinks.youtube} target="_blank">
+            <Link className="btn" href={socialLinks.youtube} target="_blank" rel="noreferrer">
               Open YouTube Channel
             </Link>
           </div>
