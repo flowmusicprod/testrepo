@@ -1,11 +1,12 @@
 :root {
-  --page: #ece8ed;
-  --scene: #cdc4d1;
-  --scene-2: #d7cfdb;
-  --ink: #1b1b1b;
-  --muted: #57505f;
-  --line: rgba(255, 255, 255, 0.58);
-  --panel: rgba(255, 255, 255, 0.72);
+  --page: #efefef;
+  --scene: #f6f6f6;
+  --scene-2: #ececec;
+  --ink: #121212;
+  --muted: #4e4e4e;
+  --line: rgba(18, 18, 18, 0.18);
+  --panel: rgba(255, 255, 255, 0.92);
+  --brand-accent: #8f1d2c;
 }
 
 * {
@@ -42,7 +43,7 @@ a {
   min-height: 56px;
   border: 1px solid var(--line);
   border-radius: 16px 16px 0 0;
-  background: linear-gradient(155deg, #c7bdcb, #c2b7c6);
+  background: linear-gradient(155deg, #ffffff, #f1f1f1);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -196,8 +197,9 @@ p {
 }
 
 .btn.primary {
-  background: #1c1c1c;
+  background: var(--brand-accent);
   color: #fff;
+  border-color: transparent;
 }
 
 .status {
@@ -247,7 +249,7 @@ textarea {
   margin: 0.6rem;
   border-radius: 18px;
   border: 1px solid var(--line);
-  background: radial-gradient(circle at 30% 10%, rgba(255, 255, 255, 0.45), rgba(206, 196, 213, 0.8) 35%, rgba(187, 174, 194, 0.96) 100%);
+  background: radial-gradient(circle at 30% 10%, rgba(255, 255, 255, 0.7), rgba(236, 236, 236, 0.94) 35%, rgba(224, 224, 224, 0.98) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -283,7 +285,7 @@ textarea {
   height: 260px;
   left: 23%;
   top: 30%;
-  background: radial-gradient(circle at 35% 50%, rgba(245, 232, 252, 0.9), rgba(165, 103, 188, 0.44) 45%, transparent 74%);
+  background: radial-gradient(circle at 35% 50%, rgba(255, 255, 255, 0.95), rgba(143, 29, 44, 0.32) 45%, transparent 74%);
   filter: blur(6px);
 }
 
@@ -300,7 +302,7 @@ textarea {
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 22px 26px rgba(72, 54, 82, 0.36));
+  filter: drop-shadow(0 22px 26px rgba(30, 30, 30, 0.28));
 }
 
 .hover-light {
@@ -364,6 +366,10 @@ textarea {
 }
 
 .selector-card h3 {
+  color: var(--brand-accent);
+}
+
+.selector-card h3 {
   font-size: 1rem;
 }
 
@@ -418,7 +424,7 @@ textarea {
   border: 1px solid var(--line);
   border-top: 0;
   border-radius: 0 0 16px 16px;
-  background: linear-gradient(165deg, #c7bdcb, #c2b7c6);
+  background: linear-gradient(165deg, #ffffff, #f1f1f1);
   margin-bottom: 0.9rem;
   padding: 0.8rem 1rem;
   color: rgba(0, 0, 0, 0.7);
