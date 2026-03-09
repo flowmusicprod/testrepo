@@ -33,6 +33,7 @@ export const releases = [
 
 export const products = [
   {
+    id: "mor-black-shirt",
     name: "MOR Black Shirt",
     sku: "DJ-MOR-BLK",
     price: 68,
@@ -40,6 +41,7 @@ export const products = [
     image: "/assets/catalog/products/morblackshirt_front.jpeg",
   },
   {
+    id: "mor-white-shirt",
     name: "MOR White Shirt",
     sku: "DJ-MOR-WHT",
     price: 68,
@@ -47,6 +49,7 @@ export const products = [
     image: "/assets/catalog/products/morwhiteshirt_front.jpeg",
   },
   {
+    id: "mor-red-shirt",
     name: "MOR Red Shirt",
     sku: "DJ-MOR-RED",
     price: 68,
@@ -54,6 +57,7 @@ export const products = [
     image: "/assets/catalog/products/morredshirt_front.jpeg",
   },
   {
+    id: "black-mor-frames",
     name: "Black MOR Frames",
     sku: "DJ-FRM-BLK",
     price: 140,
@@ -61,6 +65,7 @@ export const products = [
     image: "/assets/catalog/products/black_morframes_front.jpeg",
   },
   {
+    id: "white-sunglasses",
     name: "White Sunglasses",
     sku: "DJ-SNG-WHT",
     price: 120,
@@ -68,6 +73,7 @@ export const products = [
     image: "/assets/catalog/products/white_sunglasses_front.jpeg",
   },
   {
+    id: "red-sunglasses",
     name: "Red Sunglasses",
     sku: "DJ-SNG-RED",
     price: 120,
@@ -95,3 +101,6 @@ export const brandContact = {
   address: "Atlanta, GA 30318, United States",
 };
 
+export function findProductBySku(sku) {
+  return products.find((product) => product.sku === sku);
+}

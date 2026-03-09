@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { products } from "@/lib/data";
 
@@ -21,6 +22,11 @@ export default function CatalogPage() {
                 <span className={`status ${product.stock === "Out of Stock" ? "out" : ""}`}>
                   {product.stock}
                 </span>
+                <div style={{ marginTop: "0.7rem" }}>
+                  <Link className="btn" href={`/checkout?sku=${product.sku}`}>
+                    {product.stock === "Out of Stock" ? "Notify Me" : "Buy Now"}
+                  </Link>
+                </div>
               </div>
             </article>
           </Reveal>
@@ -29,4 +35,3 @@ export default function CatalogPage() {
     </div>
   );
 }
-
