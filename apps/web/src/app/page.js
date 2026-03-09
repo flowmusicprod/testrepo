@@ -15,21 +15,9 @@ export default function HomePage() {
   return (
     <div className="shell immersive-home">
       <section className="immersive-hero">
-        <div className="immersive-copy">
-          <p className="eyebrow">DE&apos;JERI Digital Atelier</p>
-          <h1 className="hero-title">Fashion in Motion. Products in Space.</h1>
-          <p>
-            Explore a floating studio where every piece responds subtly to movement and every drop is
-            presented like a premium campaign.
-          </p>
-          <div className="cta-row">
-            <Link className="btn primary" href="/catalog">
-              Shop Collection
-            </Link>
-            <Link className="btn" href="/showcase">
-              View Releases
-            </Link>
-          </div>
+        <div className="immersive-intro">
+          <p className="eyebrow">Immersive Collection View</p>
+          <h1 className="hero-title">Product-Centered, Motion-Led Fashion Experience.</h1>
         </div>
         <FloatingProductStage />
       </section>

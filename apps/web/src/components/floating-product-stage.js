@@ -5,34 +5,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const stageItems = [
+const orbitProducts = [
   {
-    name: "MOR Red Shirt",
-    sku: "DJ-MOR-RED",
-    image: "/assets/catalog/products/morredshirt_front.jpeg",
-    className: "float-item item-a",
-    rotate: -8,
+    name: "MOR Black Shirt",
+    sku: "DJ-MOR-BLK",
+    image: "/assets/catalog/products/morblackshirt_front.jpeg",
+    className: "orbit orbit-a",
   },
   {
     name: "Black MOR Frames",
     sku: "DJ-FRM-BLK",
     image: "/assets/catalog/products/black_morframes_front.jpeg",
-    className: "float-item item-b",
-    rotate: 4,
+    className: "orbit orbit-b",
   },
   {
-    name: "White Sunglasses",
-    sku: "DJ-SNG-WHT",
-    image: "/assets/catalog/products/white_sunglasses_front.jpeg",
-    className: "float-item item-c",
-    rotate: -3,
-  },
-  {
-    name: "MOR White Shirt",
-    sku: "DJ-MOR-WHT",
-    image: "/assets/catalog/products/morwhiteshirt_front.jpeg",
-    className: "float-item item-d",
-    rotate: 7,
+    name: "Red Sunglasses",
+    sku: "DJ-SNG-RED",
+    image: "/assets/catalog/products/red_sunglasses_front.jpeg",
+    className: "orbit orbit-c",
   },
 ];
 
@@ -41,42 +31,78 @@ export function FloatingProductStage() {
 
   function onMove(event) {
     const rect = event.currentTarget.getBoundingClientRect();
-    const px = ((event.clientX - rect.left) / rect.width) * 100;
-    const py = ((event.clientY - rect.top) / rect.height) * 100;
-    setMouse({ x: px, y: py });
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    setMouse({ x, y });
   }
 
+  const dx = mouse.x - 50;
+  const dy = mouse.y - 50;
+
   return (
-    <motion.div className="floating-stage" onMouseMove={onMove}>
+    <div className="experience-stage" onMouseMove={onMove}>
+      <div className="experience-shell-bar">
+        <div className="stage-links">
+          <span>All Pieces</span>
+          <span>Tops</span>
+          <span>Frames</span>
+        </div>
+        <p className="stage-brand">DE&apos;JERI Atelier</p>
+        <div className="stage-icons">
+          <span>◎</span>
+          <span>◌</span>
+        </div>
+      </div>
+
       <motion.div
-        className="stage-glow"
-        style={{
-          background: `radial-gradient(420px circle at ${mouse.x}% ${mouse.y}%, rgba(255,255,255,0.35), rgba(255,255,255,0.0) 48%)`,
-        }}
+        className="particle-cloud"
+        animate={{ x: dx * 1.2, y: dy * 0.9 }}
+        transition={{ type: "spring", stiffness: 70, damping: 18 }}
       />
-      {stageItems.map((item, index) => (
+
+      <motion.article
+        className="hero-product"
+        animate={{ x: dx * 0.8, y: dy * 0.7, rotate: dx * 0.02 }}
+        transition={{ type: "spring", stiffness: 95, damping: 24 }}
+      >
+        <Image
+          src="/assets/catalog/products/morredshirt_front.jpeg"
+          alt="DE'JERI hero product"
+          width={720}
+          height={980}
+          className="hero-product-image"
+          priority
+        />
+      </motion.article>
+
+      {orbitProducts.map((product, index) => (
         <motion.article
-          key={item.sku}
-          className={item.className}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: index * 0.08 }}
-          style={{
-            transform: `translate(${(mouse.x - 50) * (0.08 + index * 0.012)}px, ${(mouse.y - 50) * (0.07 + index * 0.01)}px) rotate(${item.rotate}deg)`,
-          }}
+          key={product.sku}
+          className={product.className}
+          animate={{ x: dx * (0.28 + index * 0.05), y: dy * (0.22 + index * 0.04) }}
+          transition={{ type: "spring", stiffness: 90, damping: 22 }}
         >
-          <div className="float-img-wrap">
-            <Image src={item.image} alt={item.name} width={560} height={560} className="float-img" />
-          </div>
-          <div className="float-meta">
-            <p className="eyebrow">{item.sku}</p>
-            <h3>{item.name}</h3>
-            <Link className="btn" href={`/checkout?sku=${item.sku}`}>
-              View Product
-            </Link>
-          </div>
+          <Image src={product.image} alt={product.name} width={220} height={220} />
+          <Link className="btn" href={`/checkout?sku=${product.sku}`}>
+            View
+          </Link>
         </motion.article>
       ))}
-    </motion.div>
+
+      <aside className="selector-card">
+        <p className="eyebrow">Product selector</p>
+        <h3>MOR Red Shirt</h3>
+        <p>Premium cotton silhouette with statement front logo treatment.</p>
+      </aside>
+
+      <Link className="shop-pill" href="/catalog">
+        Shop Now
+      </Link>
+
+      <p className="stage-caption">
+        DE&apos;JERI pieces are displayed in motion to mirror physical presence and runway energy.
+      </p>
+    </div>
   );
 }
+
